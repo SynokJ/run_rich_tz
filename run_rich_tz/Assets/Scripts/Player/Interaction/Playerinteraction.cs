@@ -1,13 +1,18 @@
 namespace Player.Interaction
 {
-    using Coins;
+    using Interactables;
     using UnityEngine;
 
     public class Playerinteraction : MonoBehaviour
     {
+        protected AbstractInteractiable tempInteractable = default;
+
         private void OnTriggerEnter(Collider other)
         {
-            // TODO 
+            if(other.TryGetComponent(out tempInteractable))
+            {
+                tempInteractable.OnInteracted();
+            }
         }
     }
 }
