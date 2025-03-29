@@ -3,7 +3,7 @@ namespace Coins
     using UnityEngine;
     using System;
 
-    [CreateAssetMenu(fileName = nameof(CoinsModelSO), menuName = "Coins/"+nameof(CoinsModelSO))]
+    [CreateAssetMenu(fileName = nameof(CoinsModelSO), menuName = "Coins/" + nameof(CoinsModelSO))]
     public class CoinsModelSO : ScriptableObject
     {
         /// <summary>
@@ -24,9 +24,9 @@ namespace Coins
 
         protected virtual void Awake()
         {
-            if(isSaveable)
+            if (isSaveable)
             {
-                currentValue = PlayerPrefs.GetInt(uniqName, 0);
+                SetValue(initalValue);
             }
         }
 
